@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static %} 
+{% block title %}Services{% endblock title %}
+{% block main-content %}
+<head> 
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body class="services">
+    <header class="headerS">
+        <h1>Our Services</h1>
+    </header>
+    <main class="main2">
+        <section class="service">
+            <img src="{% static 'images/cleaning.jpg' %}" alt="Service 1">            
+            <h2>Service 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </section>
+        <section class="service">
+            <img src="{% static 'images/e1.jpg' %}" alt="Service 2">
+            <h2>Service 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, felis at efficitur.</p>
+        </section>
+        <section class="service">
+            <img src="{% static 'images/k1.jpg' %}" alt="Service 3">
+            <h2>Service 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor facilisis libero, et laoreet est.</p>
+        </section>
+        <section class="service">
+            <img src="{% static 'images/k3.jpg' %}" alt="Service 4">
+            <h2>Service 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor facilisis libero, et laoreet est.</p>
+        </section>
+    </main>
+</body>
+
+{% endblock main-content %}

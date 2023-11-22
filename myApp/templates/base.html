@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--FontAwesome CSS-->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <title>Nepal | {% block title %} {% endblock title %}</title>
+  <body>
+  <div class="email">
+      <p><b>nepalwebsite123@gmail.com</b> <b>9817852630</b></P>
+      </div>
+<nav class="navbar">
+    <div class="navdiv">
+        <div class="logo"><a href="{% url 'index' %}">Nepal</a> </div>
+        <ul>
+            <li class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}"><a class="nav-link ms-2" href="{% url 'index' %}">Home</a></li>
+            <li class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}"><a class="nav-link ms-2" href="{% url 'contact' %}">Contact Us</a></li>
+            <li class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}"><a class="nav-link ms-2" href="{% url 'about' %}">About Us</a></li>
+            <li class="{% if request.resolver_match.url_name == 'product' %}active{% endif %}"><a class="nav-link ms-2" href="{% url 'product' %}">Services</a></li>
+            <button><a href="{% url 'login' %}" class="nav-link text-white">Login</a></button>
+            <button><a href="{% url 'signup' %}" class="nav-link text-white">Signup</a></button>
+        </ul>
+    </div>
+</nav>
+
+    {% block banner_slider %} {% endblock banner_slider %}
+    {% block main-content %} {% endblock main-content %}
+
+    <!-- Start Footer -->
+    <div class="main-content">
+    <footer class="container-fluid bg-dark text-center p-2 mt-5">
+      <small class="text-white">Copyright &copy; 2023 || Designed By Sarita Banjara ||</small>
+    </footer>
+    </div>
+    <!-- End Footer -->
+        <script src="{% static 'app/js/myscript.js' %}"></script>
+  </body>
+</html>

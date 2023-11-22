@@ -1,0 +1,35 @@
+{% load static %}
+{% block main-content %}
+<head> 
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<div class="container5">
+  <div class="row my-2">
+    <div class="col-sm-6 offset-sm-3">
+      <div class="login-form-container">
+        <h3 style="font-weight:bold; text-align:center; color:blue;">Login Form</h3>
+        <hr />
+        <form action="" method="post" novalidate class="shadow p-5">
+          {% csrf_token %}
+          {% for fm in form %}
+          <div class="form-group">
+            {{fm.label_tag}} {{fm}}
+            <small class="text-danger">{{fm.errors|striptags}}</small><br />
+          </div>
+          {% endfor %}
+          <div class="text-center text-primary fw-bold" style="font-size:20px; margin-top:2px;">
+            <small>New to Nepal ? <a href="{% url 'signup' %}" class="text-danger">Create an Account</a></small>
+          </div>
+            <input type="submit" class="btn btn-primary mt-4" value="Login" /><br />
+          {% if form.non_field_errors %}
+          {% for error in form.non_field_errors %}
+          <p class="alert alert-danger my-3">{{error}}</p>
+          {% endfor %}
+          {% endif %}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main-content %}
